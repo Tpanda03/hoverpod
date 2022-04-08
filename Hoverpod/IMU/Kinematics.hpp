@@ -4,7 +4,7 @@
 #include <string>
 #include <math.h>
 #include <tuple>
-#include "IMU.h"
+//S#include "IMU.h"
 
 using namespace std;
 
@@ -20,15 +20,9 @@ From IMU Man Page Refresh Rate is 800Hz
 
 class Kinematics {
 public:
-    struct acceleration { //three acceleration vectors
-      double Ax,Ay,Az;
-    };
-    struct velocity { //three velocity vectors
-      double Vx,Vy,Vz;
-    };
-    struct position { //three position vectors
-      double Px,Py,Pz;
-    };
+    struct acceleration; //three acceleration vectors
+    struct velocity; //three velocity vectors
+    struct position; //three position vectors
 
     //return current x y z acceleration with time
     acceleration input();
@@ -37,4 +31,4 @@ public:
     //returns current x y z positions with time | p(t) = integral(v(t) dt) from 0->t
     position calculatePosition(velocity prev, velocity curr);
     //a list of all kinematics data throughout time.
-}
+};
